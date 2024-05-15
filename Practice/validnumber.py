@@ -4,13 +4,13 @@ def isnumber(str):
         return True
     except ValueError:
         return False
-def validnumber(str,inputtext):
+def validnumber(str,inputtext="Number:"):
     str=input(inputtext)
     while isnumber(str)==False:
         print("Invalid input")
         str=input(inputtext)
     return float(str)
-def ishigherzero(number,inputtext,strict=True):
+def ishigherzero(number,inputtext="Number:",strict=True):
     number=input(inputtext)
     if strict:
         while (isnumber(number) and (float(number)>0))==False:

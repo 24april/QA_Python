@@ -1,4 +1,5 @@
 def createlist(listelement,elementtext="Element of list:"):
+    element=0
     continued="y"
     while continued=="y":
         element=input(elementtext)
