@@ -14,4 +14,4 @@ def calctest(operator,a,b):
         return "Division by zero."
     except TypeError:
         return "Incorrect number type."
-print(calctest("/","m",0))
+print(calctest("/",5,0))
