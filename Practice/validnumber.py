@@ -10,7 +10,7 @@ def validnumber(str,inputtext="Number:"):
         print("Invalid input")
         str=input(inputtext)
     return float(str)
-def ishigherzero(number,inputtext="Number:",strict=True):
+def validhigherzero(number,inputtext="Number:",strict=True):
     number=input(inputtext)
     if strict:
         while (isnumber(number) and (float(number)>0))==False:
