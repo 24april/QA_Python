@@ -20,7 +20,7 @@ def createlist(listelement,elementtext="Element of list:"):
     return listelement
 def sumlist(list):
     return sum(list)
-def sumlistdivided(sumoflist,divider=0):
+def sumlistdivided(sumoflist):
     divider=0
     divider=validnumber(divider,"Divider:")
     try:
