@@ -4,7 +4,7 @@ def isnumber(str):
         return True
     except ValueError:
         return False
-def validnumber(str,inputtext="Number:"):
+def validnumber(inputtext="Number:"):
     str=input(inputtext)
     while isnumber(str)==False:
         print("Invalid input")
@@ -21,13 +21,12 @@ def divide(a,b):
         return("Division by zero")
     return a/b
 def calc():
-    a,b=0,0
-    a=validnumber(a,"First number:")
+    a=validnumber("First number:")
     action=input("+ - * / :")
     while action not in ("+","-","*","/"):
         print("Invalid input")
         action=input("+ - * / :")
-    b=validnumber(b,'Second number:')
+    b=validnumber('Second number:')
     if action=="+":
         print(plus(a,b))
     elif action=="-":

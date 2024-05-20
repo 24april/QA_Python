@@ -4,13 +4,13 @@ def isnumber(str):
         return True
     except ValueError:
         return False
-def validnumber(str,inputtext="Number:"):
+def validnumber(inputtext="Number:"):
     str=input(inputtext)
     while isnumber(str)==False:
         print("Invalid input")
         str=input(inputtext)
     return float(str)
-def validhigherzero(number,inputtext="Number:",strict=True):
+def validhigherzero(inputtext="Number:",strict=True):
     number=input(inputtext)
     if strict:
         while (isnumber(number) and (float(number)>0))==False:
@@ -21,9 +21,8 @@ def validhigherzero(number,inputtext="Number:",strict=True):
             print("Invalid input")
             number=input(inputtext)
     return float(number)
-a,b=0,0
-a=validnumber(a,"First number:")
-b=validnumber(b,"Second number:")
+a=validnumber("First number:")
+b=validnumber("Second number:")
 try:
     result=a/b
     print(f"{a} / {b} =",result)

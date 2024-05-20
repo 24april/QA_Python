@@ -6,7 +6,7 @@ user_database = {
 }
 import re
 def check_emails(mail):
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    pattern = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     if not re.match(pattern,mail):
         return False
     parts = mail.split('@')
@@ -14,9 +14,10 @@ def check_emails(mail):
         return False
     return True
 def checkpassword(password):
-    return len(password)>=8 and (password.islower()==False) and (password.isupper()==False) and any(i.isdigit() for i in password) and (any(i.isalnum()==False for i in password))
+    return len(password)>=8 and (password.islower()==False) and (password.isupper()==False) and any(i.isdigit() for i in password) and (any(i.isalnum()==False for i in password) and any(i.isalpha() for i in password))
 def checkname(name):
     name=name.replace("-","")
+    name=name.replace(" ", "")
     if len(name)<2:
         return False
     return name.isalpha()

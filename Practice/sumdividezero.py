@@ -4,17 +4,17 @@ def isnumber(str):
         return True
     except ValueError:
         return False
-def validnumber(str,inputtext):
+def validnumber(inputtext):
     str=input(inputtext)
     while isnumber(str)==False:
         print("Invalid input")
         str=input(inputtext)
     return float(str)
-def createlist(listelement,elementtext="Element of list:"):
-    element=0
+def createlist(elementtext="Element of list:"):
+    listelement=[]
     continued="y"
     while continued=="y":
-        element=validnumber(element,elementtext)
+        element=validnumber(elementtext)
         listelement.append(element)
         continued=input("Continue(y)?")
     return listelement
@@ -22,15 +22,14 @@ def sumlist(list):
     return sum(list)
 def sumlistdivided(sumoflist):
     divider=0
-    divider=validnumber(divider,"Divider:")
+    divider=validnumber("Divider:")
     try:
         result=sumoflist/divider
         return result
     except ZeroDivisionError:
         result="Zero Division Error"
         return result
-numberlist=[]
-createlist(numberlist,"Number:")
+numberlist=createlist("Number:")
 print(numberlist)
 b=sumlistdivided(sumlist(numberlist))
 print(b)

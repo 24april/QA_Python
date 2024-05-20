@@ -3,7 +3,7 @@ import re
 
 def check_emails(mail):
     #создаю паттерн для проверки формата адреса email
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    pattern = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 
 
     if not re.match(pattern,mail):
